@@ -1,0 +1,47 @@
+{% extends 'biblioteca/base.html' %}
+{% load static %}
+
+{% block title %}Login - Biblioteca{% endblock %}
+
+{% block content %}
+    
+    <link rel="stylesheet" href="{% static 'usuarios/css/telaLoginStyle.css' %}">
+    
+    <div class="login-container">
+        <h1>Entrar com sua conta</h1>
+
+        <form action="#">
+            <label for="email-cpf">E-mail ou Cpf</label>
+            <input type="text" id="email-cpf" name="email-cpf">
+
+            <label for="senha">Senha</label>
+            <div class="password-container">
+                <input type="password" id="senha" name="senha">
+                <i class="fa-solid fa-eye-slash"></i> </div>
+
+
+            <a href="#" class="forgot-password">Esqueceu sua senha?</a>
+
+            <button type="submit" class="btn-login">Acessar conta</button>
+        </form>
+
+        <div class="separator">
+            <p>Ou entrar com</p>
+        </div>
+
+        <div class="social-login">
+            <button class="btn-google">
+                entrar com o Google
+            </button>
+            <button class="btn-facebook">
+                Entrar com o facebook
+            </button>
+        </div>
+
+        <div class="register">
+            <p>Não tem conta?</p>
+            <button class="btn-create">Criar Conta</button>
+        </div>
+    </div>
+
+{% endblock %}

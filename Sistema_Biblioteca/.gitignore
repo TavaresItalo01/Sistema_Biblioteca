@@ -1,0 +1,61 @@
+# Ambiente virtual
+venv/
+ENV/
+env/
+*.pyc
+__pycache__/
+
+# Arquivos do sistema
+.DS_Store
+Thumbs.db
+
+# Banco de dados local (SQLite)
+*.sqlite3
+
+# Arquivos de configuração e segurança
+*.env
+.env
+*.secret
+
+# Arquivos gerados pelo Django
+db.sqlite3
+/media/
+staticfiles/
+static_root/
+*.log
+
+# Arquivos de migração temporários
+*.pot
+*.pyc
+*.pyo
+*.pyd
+*.swp
+*.bak
+
+# Arquivos do VSCode/PyCharm/IDEs
+.vscode/
+.idea/
+
+# Backup / dump
+*.dump
+*.bak
+
+# Arquivos de cobertura de testes
+htmlcov/
+.coverage
+.tox/
+.nox/
+
+# Arquivos de build Python
+build/
+dist/
+*.egg-info/
+
+# Arquivos do sistema operacional
+desktop.ini
+
+# Arquivos temporários
+*.tmp
+
+# arquivos do banco de dados local
+.data/

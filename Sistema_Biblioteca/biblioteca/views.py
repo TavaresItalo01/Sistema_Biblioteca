@@ -1,3 +1,4 @@
 from django.shortcuts import render
 
-# Create your views here.
+def telaInicial(request):
+    return render(request, "biblioteca/telaInicial.html")
