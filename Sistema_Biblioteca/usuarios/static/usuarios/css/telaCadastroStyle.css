@@ -1,0 +1,20 @@
+/* Agrupa campos em linha */
+.form-row {
+    display: flex;
+    gap: 20px; /* espaçamento entre colunas */
+    margin-bottom: 15px;
+}
+
+/* Cada campo dentro da linha */
+.form-group {
+    flex: 1; /* ocupa metade da linha */
+    display: flex;
+    flex-direction: column;
+}
+
+/* Ajusta para telas menores */
+@media (max-width: 600px) {
+    .form-row {
+        flex-direction: column;
+    }
+}

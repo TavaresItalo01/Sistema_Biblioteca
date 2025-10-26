@@ -126,3 +126,10 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 # settings.py (no final do arquivo)
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
+
+AUTH_USER_MODEL = 'usuarios.Usuario'
+
+AUTHENTICATION_BACKENDS = [
+    'usuarios.backends.EmailOrCpfBackend',  # seu backend
+    'django.contrib.auth.backends.ModelBackend',  # padrão
+]
