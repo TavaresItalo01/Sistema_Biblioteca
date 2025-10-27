@@ -1,0 +1,50 @@
+/* Estilo do container principal da página */
+.interesse-container {
+    max-width: 1200px;
+    margin: 40px auto; /* Espaçamento do topo/baixo e centralizado */
+    padding: 20px;
+    text-align: center;
+}
+
+.interesse-container h1 {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 50px;
+}
+
+/* O grid que vai segurar os botões */
+.interesse-grid {
+    display: grid;
+    /* Cria 3 colunas de tamanho igual */
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px; /* Espaço entre os botões */
+}
+
+/* O estilo de cada "botão" (que é um link <a>) */
+.interesse-card {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 50px 20px; /* Deixa o botão "alto" */
+    text-decoration: none;
+    color: #333;
+    font-size: 1.5rem;
+    font-weight: 500;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Efeito ao passar o mouse */
+.interesse-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    color: #3a4b40; /* Um tom de verde escuro */
+}
+
+/* Ajuste para telas menores (celulares) */
+@media (max-width: 768px) {
+    .interesse-grid {
+        /* Uma coluna só em telas pequenas */
+        grid-template-columns: 1fr;
+    }
+}

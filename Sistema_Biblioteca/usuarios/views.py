@@ -27,7 +27,7 @@ def login_view(request):
         if user:
             login(request, user)
             messages.success(request, f"Bem-vindo {user.username}!")
-            return redirect('telaCadastro')
+            return redirect('telaAreaInteresse')
         else:
             messages.error(request, "Usuário ou senha incorretos.")
 
