@@ -11,13 +11,13 @@
     <h1>Escolha sua Área de Interesse</h1>
 
     <div class="interesse-grid">
-        <a href="#" class="interesse-card">Tecnologia da Informação</a>
-        <a href="#" class="interesse-card">Humanas</a>
-        <a href="#" class="interesse-card">Ficção Científica / Romance</a>
-        <a href="#" class="interesse-card">Saúde</a>
-        <a href="#" class="interesse-card">Biológicas</a>
-        <a href="#" class="interesse-card">Exatas</a>
+        <a href="{% url 'telaLivros' %}" class="interesse-card">Tecnologia da Informação</a>
+        <a href="{% url 'telaLivros' %}" class="interesse-card">Humanas</a>
+        <a href="{% url 'telaLivros' %}" class="interesse-card">Ficção Científica / Romance</a>
+        <a href="{% url 'telaLivros' %}" class="interesse-card">Saúde</a>
+        <a href="{% url 'telaLivros' %}" class="interesse-card">Biológicas</a>
+        <a href="{% url 'telaLivros' %}" class="interesse-card">Exatas</a>
     </div>
 </div>
-{% comment %} {% url 'lista_livros' %} {% endcomment %}
+
 {% endblock %}

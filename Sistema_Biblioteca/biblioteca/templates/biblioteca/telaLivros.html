@@ -1,0 +1,46 @@
+{% extends 'biblioteca/base.html' %}
+{% load static %}
+
+{% block title %}Livros - Categoria{% endblock %}
+
+{% block content %}
+
+<link rel="stylesheet" href="{% static 'biblioteca/css/telaLivrosStyle.css' %}">
+
+<div class="livros-container">
+    
+    <h1 class="categoria-banner">Tecnologia da Informação</h1>
+    
+    <div class="livros-grid">
+        
+        <div class="livro-card">
+            <div class="capa-livro">Código Limpo</div> <span class="status-disponivel">Disponível</span> </div>
+        <div class="livro-card">
+            <div class="capa-livro">Arquitetura Limpa</div>
+            <span class="status-indisponivel">Indisponível</span>
+        </div>
+
+        <div class="livro-card">
+            <div class="capa-livro">O Programador Pragmático</div>
+            <span class="status-disponivel">Disponível</span>
+        </div>
+
+        <div class="livro-card">
+            <div class="capa-livro">Padrões de Projeto</div>
+            <span class="status-disponivel">Disponível</span>
+        </div>
+
+        <div class="livro-card">
+            <div class="capa-livro">Scrum: A Arte de Fazer...</div>
+            <span class="status-indisponivel">Indisponível</span>
+        </div>
+
+        <div class="livro-card">
+            <div class="capa-livro">Domain-Driven Design</div>
+            <span class="status-disponivel">Disponível</span>
+        </div>
+
+    </div>
+</div>
+
+{% endblock %}

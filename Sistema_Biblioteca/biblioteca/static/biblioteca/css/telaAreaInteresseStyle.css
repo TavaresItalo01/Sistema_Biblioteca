@@ -1,7 +1,6 @@
-/* Estilo do container principal da página */
 .interesse-container {
     max-width: 1200px;
-    margin: 40px auto; /* Espaçamento do topo/baixo e centralizado */
+    margin: 40px auto; 
     padding: 20px;
     text-align: center;
 }
@@ -12,7 +11,6 @@
     margin-bottom: 50px;
 }
 
-/* O grid que vai segurar os botões */
 .interesse-grid {
     display: grid;
     /* Cria 3 colunas de tamanho igual */
@@ -20,12 +18,11 @@
     gap: 30px; /* Espaço entre os botões */
 }
 
-/* O estilo de cada "botão" (que é um link <a>) */
 .interesse-card {
     background-color: #fff;
     border: 1px solid #ddd;
     border-radius: 10px;
-    padding: 50px 20px; /* Deixa o botão "alto" */
+    padding: 50px 20px; 
     text-decoration: none;
     color: #333;
     font-size: 1.5rem;
@@ -34,17 +31,15 @@
     transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-/* Efeito ao passar o mouse */
 .interesse-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    color: #3a4b40; /* Um tom de verde escuro */
+    color: #3a4b40; 
 }
 
-/* Ajuste para telas menores (celulares) */
+/* Ajuste para telas menores*/
 @media (max-width: 768px) {
     .interesse-grid {
-        /* Uma coluna só em telas pequenas */
         grid-template-columns: 1fr;
     }
 }
