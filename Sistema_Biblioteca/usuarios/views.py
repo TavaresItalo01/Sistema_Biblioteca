@@ -12,6 +12,9 @@ def telaLogin(request):
 def telaCadastro(request):
     return render(request, "usuarios/telaCadastro.html")
 
+def telaPerfil(request):
+    usuario = request.user 
+    return render(request, "usuarios/telaPerfil.html", {"usuario": usuario})
 
 def login_view(request):
     if request.method == 'POST':
@@ -75,3 +78,15 @@ def telaCadastro(request):
         return redirect('telaLogin')
 
     return render(request, 'usuarios/telaCadastro.html')
+
+def atualizar_perfil(request):
+    if request.method == 'POST':
+        user = request.user
+        user.first_name = request.POST.get('nome')
+        user.last_name = request.POST.get('sobrenome')
+        user.email = request.POST.get('email')
+
+        if hasattr(user, 'cpf'):
+            user.cpf = request.POST.get('cpf')
+
+        user.save()
