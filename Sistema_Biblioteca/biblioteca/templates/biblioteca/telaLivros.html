@@ -12,11 +12,12 @@
     <h1 class="categoria-banner">{{ categoria_nome }}</h1>
 
     <div class="livros-grid">
-
+        
         {% for livro in livros %}
             <div class="livro-card">
-                <div class="capa-livro">{{ livro.titulo }}</div> 
-
+                <a href="{% url 'detalhesLivro' livro.id %}" class="link-livro">
+                    <div class="capa-livro">{{ livro.titulo }}</div> 
+                </a>
                 {% if livro.disponivel %}
                     <span class="status-disponivel">Disponível</span>
                 {% else %}

@@ -1,5 +1,7 @@
 from django.shortcuts import render
 from .models import Livro
+from django.shortcuts import render, get_object_or_404
+
 
 def telaInicial(request):
     return render(request, "biblioteca/telaInicial.html")
@@ -17,3 +19,7 @@ def lista_livros(request, categoria):
         'categoria_nome': categoria_nome_formatado
     }
     return render(request, 'biblioteca/telaLivros.html', context)
+
+def detalhes_livro(request, id):
+    livro = get_object_or_404(Livro, id=id)
+    return render(request, 'biblioteca/detalhesLivro.html', {'livro': livro})
