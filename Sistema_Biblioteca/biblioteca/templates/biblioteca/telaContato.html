@@ -1,0 +1,16 @@
+{% extends 'biblioteca/base.html' %}
+{% load static %}
+
+{% block title %}Contato - Biblioteca{% endblock %}
+
+{% block content %}
+<link rel="stylesheet" href="{% static 'biblioteca/css/telaContatoStyle.css' %}">
+
+<div class="contato-container">
+    <h1 class="title-cursive">Fale Conosco</h1>
+    <div class="contato-info">
+        <p><strong>Contato: </strong> (81) 3445-5478</p>
+        <a href="mailto:biblioteca@gmail.com"><strong>E-mail: </strong> biblioteca@gmail.com</p>
+    </div>
+</div>
+{% endblock %}

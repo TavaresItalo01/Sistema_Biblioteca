@@ -23,3 +23,6 @@ def lista_livros(request, categoria):
 def detalhes_livro(request, id):
     livro = get_object_or_404(Livro, id=id)
     return render(request, 'biblioteca/detalhesLivro.html', {'livro': livro})
+
+def telaContato(request):
+    return render(request, "biblioteca/telaContato.html")
