@@ -4,5 +4,5 @@ from . import views
 urlpatterns = [
     path('', views.telaInicial, name='telaInicial'),
     path('interesse/', views.area_interesse, name='telaAreaInteresse'),
-    path('livros/', views.lista_livros, name='telaLivros'),
+    path('livros/<str:categoria>/', views.lista_livros, name='telaLivros'),
 ]

@@ -1,44 +1,34 @@
 {% extends 'biblioteca/base.html' %}
 {% load static %}
 
-{% block title %}Livros - Categoria{% endblock %}
+{% block title %}Livros - {{ categoria_nome }}{% endblock %}
 
 {% block content %}
 
 <link rel="stylesheet" href="{% static 'biblioteca/css/telaLivrosStyle.css' %}">
 
 <div class="livros-container">
-    
-    <h1 class="categoria-banner">Tecnologia da Informação</h1>
-    
+
+    <h1 class="categoria-banner">{{ categoria_nome }}</h1>
+
     <div class="livros-grid">
+
+        {% for livro in livros %}
+            <div class="livro-card">
+                <div class="capa-livro">{{ livro.titulo }}</div> 
+
+                {% if livro.disponivel %}
+                    <span class="status-disponivel">Disponível</span>
+                {% else %}
+                    <span class="status-indisponivel">Indisponível</span>
+                {% endif %}
+            </div>
+        {% empty %}
+            <p style="text-align: center; grid-column: 1 / -1;">
+                Nenhum livro encontrado para esta categoria ainda.
+            </p>
         
-        <div class="livro-card">
-            <div class="capa-livro">Código Limpo</div> <span class="status-disponivel">Disponível</span> </div>
-        <div class="livro-card">
-            <div class="capa-livro">Arquitetura Limpa</div>
-            <span class="status-indisponivel">Indisponível</span>
-        </div>
-
-        <div class="livro-card">
-            <div class="capa-livro">O Programador Pragmático</div>
-            <span class="status-disponivel">Disponível</span>
-        </div>
-
-        <div class="livro-card">
-            <div class="capa-livro">Padrões de Projeto</div>
-            <span class="status-disponivel">Disponível</span>
-        </div>
-
-        <div class="livro-card">
-            <div class="capa-livro">Scrum: A Arte de Fazer...</div>
-            <span class="status-indisponivel">Indisponível</span>
-        </div>
-
-        <div class="livro-card">
-            <div class="capa-livro">Domain-Driven Design</div>
-            <span class="status-disponivel">Disponível</span>
-        </div>
+        {% endfor %}
 
     </div>
 </div>
