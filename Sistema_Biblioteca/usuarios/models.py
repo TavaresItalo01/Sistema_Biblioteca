@@ -2,7 +2,8 @@ from django.db import models
 from django.contrib.auth.models import AbstractUser
 
 class Usuario(AbstractUser):
-    cpf = models.CharField(max_length=11, unique=True, blank=False, default='')
+    cpf = models.CharField(max_length=11, unique=False, blank=True, null=True)
+
     email = models.EmailField(unique=True)
 
     USERNAME_FIELD = 'username'  # mantém o username como campo obrigatório para autenticação

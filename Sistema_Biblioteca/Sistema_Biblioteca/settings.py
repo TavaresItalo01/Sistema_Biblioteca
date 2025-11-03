@@ -37,9 +37,19 @@ INSTALLED_APPS = [
     "django.contrib.contenttypes",
     "django.contrib.sessions",
     "django.contrib.messages",
+    'django.contrib.sites',
     "django.contrib.staticfiles",
     "usuarios",
     "biblioteca",
+
+    # allauth
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
+
+    # provedores sociais
+    'allauth.socialaccount.providers.google',
+    'allauth.socialaccount.providers.facebook',
 ]
 
 MIDDLEWARE = [
@@ -50,6 +60,7 @@ MIDDLEWARE = [
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
+    "allauth.account.middleware.AccountMiddleware",
 ]
 
 ROOT_URLCONF = "Sistema_Biblioteca.urls"
@@ -129,7 +140,19 @@ STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 
 AUTH_USER_MODEL = 'usuarios.Usuario'
 
+SITE_ID = 2
+
 AUTHENTICATION_BACKENDS = [
     'usuarios.backends.EmailOrCpfBackend',  # seu backend
     'django.contrib.auth.backends.ModelBackend',  # padrão
+    'allauth.account.auth_backends.AuthenticationBackend',  # login social
 ]
+
+LOGIN_REDIRECT_URL = '/interesse/'  
+LOGOUT_REDIRECT_URL = ''
+
+ACCOUNT_EMAIL_VERIFICATION = "none"  # opcional (para não exigir e-mail)
+ACCOUNT_AUTHENTICATION_METHOD = "username_email"
+ACCOUNT_EMAIL_REQUIRED = True
+
+SOCIALACCOUNT_FORMS = {'signup': 'usuarios.forms.CustomSocialSignupForm'}

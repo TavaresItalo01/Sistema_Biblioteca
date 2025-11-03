@@ -1,57 +1,58 @@
 {% extends 'biblioteca/base.html' %}
 {% load static %}
+{% load socialaccount %}  {# necessário para provider_login_url #}
 
 {% block title %}Login - Biblioteca{% endblock %}
 
 {% block content %}
-    
-    <link rel="stylesheet" href="{% static 'usuarios/css/telaLoginStyle.css' %}">
-    
-    <div class="login-container">
-        <h1>Entrar com sua conta</h1>
 
-         {% if messages %}
-            <div class="messages">
-                {% for message in messages %}
-                    <p class="error">{{ message }}</p>
-                {% endfor %}
-            </div>
-        {% endif %}
+<link rel="stylesheet" href="{% static 'usuarios/css/telaLoginStyle.css' %}">
 
+<div class="login-container">
+    <h1>Entrar com sua conta</h1>
 
-        <form method="POST" action="{% url 'telaLogin' %}">
-             {% csrf_token %}
-            <label for="email-cpf">E-mail ou Cpf</label>
-            <input type="text" id="email_cpf" name="email_cpf" required>
+    {% if messages %}
+        <div class="messages">
+            {% for message in messages %}
+                <p class="error">{{ message }}</p>
+            {% endfor %}
+        </div>
+    {% endif %}
 
-            <label for="senha">Senha</label>
-            <div class="password-container">
-                <input type="password" id="senha" name="senha" required>
-                <i class="fa-solid fa-eye-slash"></i> </div>
+    <form method="POST" action="{% url 'telaLogin' %}">
+        {% csrf_token %}
+        <label for="email-cpf">E-mail ou CPF</label>
+        <input type="text" id="email_cpf" name="email_cpf" required>
 
-
-            <a href="#" class="forgot-password">Esqueceu sua senha?</a>
-
-            <button type="submit" class="btn-login">Acessar conta</button>
-        </form>
-
-        <div class="separator">
-            <p>Ou entrar com</p>
+        <label for="senha">Senha</label>
+        <div class="password-container">
+            <input type="password" id="senha" name="senha" required>
+            <i class="fa-solid fa-eye-slash"></i>
         </div>
 
-        <div class="social-login">
-            <button class="btn-google">
-                entrar com o Google
-            </button>
-            <button class="btn-facebook">
-                Entrar com o facebook
-            </button>
-        </div>
+        <a href="#" class="forgot-password">Esqueceu sua senha?</a>
 
-        <div class="register">
-            <p>Não tem conta?</p>
-            <button class="btn-create" onclick="location.href='{% url 'telaCadastro' %}'">Criar Conta</button>
-        </div>
+        <button type="submit" class="btn-login">Acessar conta</button>
+    </form>
+
+    <div class="separator">
+        <p>Ou entrar com</p>
     </div>
+
+    <div class="social-login">
+        <a href="{% provider_login_url 'google' %}" class="btn-google">
+            <img src="{% static 'usuarios/img/google-icon.png' %}" alt="Google"> Entrar com Google
+        </a>
+
+        <a href="{% provider_login_url 'facebook' %}" class="btn-facebook">
+            <img src="{% static 'usuarios/img/facebook-icon.png' %}" alt="Facebook"> Entrar com Facebook
+        </a>
+    </div>
+
+    <div class="register">
+        <p>Não tem conta?</p>
+        <button class="btn-create" onclick="location.href='{% url 'telaCadastro' %}'">Criar Conta</button>
+    </div>
+</div>
 
 {% endblock %}
