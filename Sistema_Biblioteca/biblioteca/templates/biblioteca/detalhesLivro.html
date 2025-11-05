@@ -25,7 +25,7 @@
             <h1>{{ livro.titulo }}</h1>
             <p><strong>Categoria:</strong> {{ livro.get_categoria_display }}</p>
             {% if livro.disponivel %}
-                <!-- Espaço para livro disponível -->
+                <a href="{% url 'telaPedido'%}?livro_id={{ livro.id }}" class="carrinho">Adicionar no carrinho</a>
             {% else %}
                 <p class="lista-espera">Increva-se na lista de espera</p>
                 <p>*Este livro está fora da estante neste momento, mas você pode entrar na lista de espera e ser um dos primeiros a pegá-lo quando estiver disponível novamente. <strong>Clique no botão acima para aguardar.</strong></p>

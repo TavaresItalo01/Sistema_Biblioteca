@@ -1,0 +1,37 @@
+{% extends 'biblioteca/base.html' %}
+{% load static %}
+{% block title %}Pedido{% endblock %}
+
+{% block content %}
+<link rel="stylesheet" href="{% static 'biblioteca/css/pedido.css' %}">
+<div class="carrinho-container">
+
+    <h1>Meus pedidos</h1>
+
+    {% if messages %}
+        <ul class="messages">
+            {% for message in messages %}
+                <li class="alert-success">{{ message }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+
+    {% if livro %}
+    <form method="get" class="form-carrinho">
+        <input type="hidden" name="livro_id" value="{{ livro.id }}">
+        <h3>{{ livro.titulo }}</h3>
+        <p><strong>Categoria:</strong> {{ livro.get_categoria_display }}</p>
+
+        <div class="quantidade-controle">
+            <button type="submit" name="diminuir" class="btn-qtd">-</button>
+            <input type="text" name="quantidade" value="{{ quantidade }}" readonly>
+            <button type="submit" name="aumentar" class="btn-qtd">+</button>
+        </div>
+
+        <button type="submit" name="finalizar" class="btn-finalizar">Finalizar Compra</button>
+    </form>
+    {% else %}
+        <p>Nenhum livro selecionado.</p>
+    {% endif %}
+</div>
+{% endblock %}

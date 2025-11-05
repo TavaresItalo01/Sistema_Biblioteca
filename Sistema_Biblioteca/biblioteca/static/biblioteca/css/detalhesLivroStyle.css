@@ -76,3 +76,19 @@
         width: 150px;
     }
 }
+
+/* Para detalhe de livro disponível */
+.carrinho {
+    display: flex;
+    cursor: pointer;
+    text-align: center;
+    justify-content: center;
+    border-radius: 50px;
+    background-color: #ffd458;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-weight: 600;
+    width: 35%;
+    padding: 1rem;
+}
+
